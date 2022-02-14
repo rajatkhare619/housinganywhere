@@ -1,11 +1,13 @@
-<ng-container *ngIf="characters$ | async as characters; else loading">
+<div class="profiles" *ngIf="characters$ | async as characters; else loading">
   <app-profile
     *ngFor="let character of characters"
     [profile]="character"
   ></app-profile>
-</ng-container>
+</div>
 <ng-template #loading>
-  <p-progressSpinner></p-progressSpinner>
+  <div class="profiles">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
 </ng-template>
 <p-paginator
   [first]="currentPage"
