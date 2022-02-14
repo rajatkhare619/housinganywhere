@@ -17,10 +17,18 @@ export class ProfileComponent {
 
   constructor() {}
 
+  /**
+   * Open the sidebar with the place details
+   * @param placeURL The place whose details will be shown
+   */
   showPlaceDetails(placeURL: string) {
     this.placeDetails.open(placeURL);
   }
 
+  /**
+   * Show the list of episodes the character appears in
+   * @param episodeURLs The URLs to fetch the episode information from
+   */
   showEpisodes(episodeURLs: string[]) {
     this.episodes.open(episodeURLs);
   }

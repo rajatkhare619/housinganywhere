@@ -17,6 +17,10 @@ export class PlaceDetailsComponent implements OnDestroy {
 
   constructor(private profilesService: ProfilesService) {}
 
+  /**
+   * Open the sidebar with the place details
+   * @param placeURL URL to fetch the place information
+   */
   open(placeURL: string): void {
     this.loading = true;
     this.placeSubscription = this.profilesService
@@ -26,7 +30,7 @@ export class PlaceDetailsComponent implements OnDestroy {
         switchMap((placeDetails: Place) => placeDetails.residents),
         mergeMap(
           (resident: string) => this.profilesService.getCharacter(resident),
-          10
+          10 // Allow only 10 concurrent requests to avoid request failure
         ),
         toArray()
       )
