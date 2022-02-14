@@ -1,0 +1,12 @@
+<ng-container *ngIf="place">
+  <p-sidebar [(visible)]="displaySidebar" position="right">
+    <h2>{{ place.name }}</h2>
+    <p>Type - {{ place.type }}</p>
+    <p>Dimension - {{ place.dimension }}</p>
+    <h1>Residents (Total - {{ residents?.length }}):</h1>
+    <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+    <ul>
+      <li *ngFor="let resident of residents">{{ resident }}</li>
+    </ul>
+  </p-sidebar>
+</ng-container>

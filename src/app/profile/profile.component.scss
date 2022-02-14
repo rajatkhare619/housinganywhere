@@ -1,0 +1,15 @@
+.card {
+  width: 20rem;
+  margin: 2rem;
+
+.episodes {
+  margin-top: 1rem;
+  text-align: center;
+}
+}
+
+:host ::ng-deep {
+  .p-card-content {
+    padding:0;
+  }
+}

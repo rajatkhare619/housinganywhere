@@ -1,0 +1,8 @@
+<p-sidebar [(visible)]="displaySidebar" position="right">
+  <h2>Chapters featured on:</h2>
+  <ul>
+    <li *ngFor="let episode of episodeList$ | async">
+      {{ episode }}
+    </li>
+  </ul>
+</p-sidebar>

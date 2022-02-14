@@ -1,0 +1,47 @@
+<div class="card">
+  <p-card [header]="profile.name">
+    <ng-template pTemplate="header">
+      <img class="photo" [src]="profile.image" />
+    </ng-template>
+    <p>
+      <i
+        class="pi pi-heart-fill"
+        [style.color]="
+          profile.status === 'Alive'
+            ? 'green'
+            : profile.status === 'Dead'
+            ? 'red'
+            : 'yellow'
+        "
+      ></i>
+      {{ profile.status }} - {{ profile.species }} ({{ profile.gender }})
+    </p>
+    <div><h4>Origin:</h4></div>
+    <p-button
+      [disabled]="profile.origin.name === 'unknown'"
+      styleClass="p-button-sm"
+      [label]="profile.origin.name"
+      (click)="showPlaceDetails(profile.origin.url)"
+    ></p-button>
+
+    <div><h4>Location:</h4></div>
+    <p-button
+      [disabled]="profile.location.name === 'unknown'"
+      styleClass="p-button-sm"
+      [label]="profile.location.name"
+      (click)="showPlaceDetails(profile.location.url)"
+    ></p-button>
+
+    <div class="episodes">
+      <p-button
+        label="Episodes"
+        icon="pi pi-book"
+        styleClass="p-button-help"
+        (click)="showEpisodes(profile.episode)"
+      ></p-button>
+    </div>
+  </p-card>
+</div>
+
+<app-place-details></app-place-details>
+<app-episodes></app-episodes>
