@@ -3,13 +3,13 @@
     *ngFor="let character of characters"
     [profile]="character"
   ></app-profile>
-  <p-paginator
-    [first]="currentPage"
-    [rows]="20"
-    [totalRecords]="totalRecords"
-    (onPageChange)="paginate($event)"
-  ></p-paginator>
 </ng-container>
 <ng-template #loading>
   <p-progressSpinner></p-progressSpinner>
 </ng-template>
+<p-paginator
+  [first]="currentPage"
+  [rows]="20"
+  [totalRecords]="totalRecords"
+  (onPageChange)="paginate($event)"
+></p-paginator>
