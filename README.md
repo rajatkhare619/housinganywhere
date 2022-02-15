@@ -11,9 +11,9 @@ You can quickly view the app without installing the dependencies [here](https://
 
 I used [PrimeNG](https://www.primefaces.org/primeng/showcase/#/) for some components, [ESLint](https://eslint.org/) for linting and [Prettier](https://prettier.io/) for code formatting.
 
-## Running the application
+## Running the application locally
 
-Run `npm install` to install the dependencies. Run `npm start` and navigate to `http://localhost:4200/` to view the application locally.
+After cloning the repository, run `npm install` to install the dependencies. Run `npm start` and navigate to `http://localhost:4200/` to view the application locally.
 
 ## Build
 
